@@ -1,7 +1,7 @@
-
 import os
 import shutil
-from distutils.core import setup
+from setuptools import setup
+
 
 if not os.path.exists('scripts'):
     os.makedirs('scripts')
@@ -10,12 +10,18 @@ shutil.copyfile('xlsx2csv.py', 'scripts/xlsx2csv')
 scripts = ["scripts/xlsx2csv"]
 
 name = "xlsx2csv"
-version = "0.7.2"
-author = "Dilshod Temirkhdojaev"
-author_email = "tdilshod@gmail.com"
+version = "0.7.3"
+authors = (
+    'Dilshod Temirkhdojaev',
+    'Jeffrey Vandenborne',
+)
+author_emails = (
+    'tdilshod@gmail.com',
+    'vandenbornejeffrey@gmail.com',
+)
 desc = "xlsx to csv converter"
 long_desc = open('README.md', mode='r', encoding='UTF-8')
-url = "http://github.com/dilshod/xlsx2csv"
+url = 'https://github.com/JeffreyVdb/xlsx2csv'
 classifiers=[
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -46,8 +52,8 @@ setup(
     name='xlsx2csv',
     version='0.7.2',
     description=desc,
-    author=author,
-    author_email=author_email,
+    author=', '.join(authors),
+    author_email=', '.join(author_emails),
     classifiers=classifiers,
     py_modules=['xlsx2csv'],
     data_files=data_files,
